@@ -293,7 +293,7 @@
   .flex {
     display: flex;
   }
-  
+
   .grid {
     display: grid;
   }
@@ -467,4 +467,17 @@
     .lg-grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
+
+  .center-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .center-logo img {
+    max-width: 150px; /* Adjust this value based on your desired logo size */
+    height: auto;
   }
