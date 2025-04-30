@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
 * {
     padding: 0;
@@ -18,11 +19,14 @@ body {
     align-items: center;
     justify-content: space-between;
     display: flex;
+    position: relative;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     padding: 20px 80px;
     box-shadow: 0 10px 10px #2b2c306f;
+    z-index: 2;
 }
+
 
 .search-bar input {
     width: 100%;
@@ -51,8 +55,9 @@ body {
     border-bottom-right-radius: 30px;
     position: relative;
     bottom: 20px;
-    z-index: -99;
+    z-index: 1; 
 }
+
 
 .navbar-bot ul {
     display: flex;
@@ -67,3 +72,162 @@ body {
     font-weight: 700;
     color: #2B2C30;
 }
+
+.navbar-bot ul li a {
+    position: relative;
+    font-family: "Playfair", serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2B2C30;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.navbar-bot ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #2B2C30;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-bot ul li a:hover::after {
+    width: 100%;
+}
+
+
+.carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -3%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%; 
+}
+
+.carousel-slide {
+    min-width: 100vw;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: -1;
+}
+
+.purchase-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2B2C30;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #2B2C30;
+}
+
+
+
+.about-primebakery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 150px;
+    background-color: #fff;
+    gap: 50px;
+    flex-wrap: wrap; 
+}
+
+.split-left {
+    position: relative;
+    flex: 1 1 500px;
+    max-width: 50%; 
+}
+
+.split-left img.main-img {
+    width: 60%; 
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.floating-img {
+    position: absolute;
+    top: 160px; 
+    left: 33%;
+    transform: translateX(-50%);
+    width: 65%;
+    pointer-events: none; 
+    transition: transform 0.1s ease-out;
+    z-index: 2;
+}
+
+.split-right {
+    flex: 1 1 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.split-right h1 {
+    font-family: "Playfair", serif;
+    font-size: 60px;
+    color: #2B2C30;
+}
+
+.split-right p {
+    font-family: "Nunito Sans", sans-serif;
+    text-align: justify;
+    color: #444;
+}
+
+.action-btn {
+    width: fit-content;
+    padding: 10px 25px;
+    background-color: #2B2C30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+
+  
