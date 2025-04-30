@@ -10,7 +10,6 @@
 }
 
 body {
-    background-color: #D9D9D9;
 
 }
 
@@ -36,6 +35,11 @@ body {
     border-radius: 5px;
     outline: none;
     color: #9DBFAF;
+}
+
+.logo img{
+    max-width: 60%;
+    margin-left: 10%;
 }
 
 .icons {
@@ -230,4 +234,30 @@ body {
 }
 
 
+.shop-category-header {
+    position: relative;
+    margin: 80px 0; /* adjust vertical spacing */
+  }
+  
+  .text-background {
+    font-family: "Playfair", serif;
+    font-size: 100px;
+    color: #f1f1f1;
+    margin-left: 0;
+    margin-bottom: -40px; 
+    z-index: 1;
+    text-align: center;
+    letter-spacing: 15%;
+  }
+  
+  .text-foreground {
+    font-family: "Playfair", sans-serif;
+    font-size: 60px;
+    color: #2B2C30;
+    margin-left: 50px;
+    margin-top: -6.5%;
+    z-index: 2;
+    font-weight: bold;
+    text-align: center;
+  }
   
