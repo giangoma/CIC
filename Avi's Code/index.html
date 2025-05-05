@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grandiose Prime Bakery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="../Assets/gpbl.png">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-top">
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="logo">
+          <img src="../Assets/primebakery-logo.png" alt="Logo">
+        </div>
+        <div class="icons">
+          <a href="#"><img src="../Assets/User.png" alt="User" class="icons_icons"></a>
+          <a href="#"><img src="../Assets/Basket.png" alt="Basket" class="icons_icons"></a>
+        </div>
+      </div>
+      <div class="navbar-bot">
+        <ul>
+          <li><a href="#carousel">Home</a></li>
+          <li><a href="#about-primebakery">About Us</a></li>
+          <li><a href="#category">Products</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="loginPopup" class="login-popup" style="display: none;">
+      <div class="login-content">
+        <span class="close-button">&times;</span>
+        <h2>Sign In</h2>
+        <div class="social-login">
+          <button class="social-button facebook-login">
+            <i class="fab fa-facebook-f"></i> Sign in with Facebook
+          </button>
+          <button class="social-button instagram-login">
+            <i class="fab fa-instagram"></i> Sign in with Instagram
+          </button>
+          <button class="social-button twitter-login">
+            <i class="fab fa-twitter"></i> Sign in with Twitter
+          </button>
+        </div>
+        <div class="separator">
+          <hr>
+          <span>or</span>
+          <hr>
+        </div>
+        <p>Use your email to sign in:</p>
+        <form id="loginForm" class="email-signin-form">
+          <div class="input-group">
+            <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="sign-in-button">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="basketPopup" class="basket-popup" style="display: none;">
+      <div class="basket-content">
+        <span class="close-button">&times;</span>
+        <h2>Your Basket</h2>
+
+        <div id="favorites-section">
+          <h3>Favorites</h3>
+          <div id="favorite-items">
+            <p id="empty-favorites">Your favorites are currently empty.</p>
+          </div>
+        </div>
+
+        <h3>Basket Items</h3>
+        <div id="basket-items">
+          <p id="empty-basket">Your basket is currently empty.</p>
+        </div>
+
+        <div class="basket-actions">
+          <button id="checkout-button">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="../Assets/donuts-banner.png" alt="Slide 1">
+          <button class="purchase-btn">Purchase</button>
+        </div>
+        <div class="carousel-slide">
+          <img src="../Assets/croissant-banner.png" alt="Slide 2">
+          <button class="purchase-btn">Purchase</button>
+        </div>
+        <div class="carousel-slide">
+          <img src="../Assets/freshlybakedcookies.png" alt="Slide 3">
+          <button class="purchase-btn">Purchase</button>
+        </div>
+        <div class="carousel-slide">
+          <img src="../Assets/cheeseburger-banner.png" alt="Slide 4">
+          <button class="purchase-btn">Purchase</button>
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+    </section>
+  </header>
+
+  <section id="about-primebakery">
+    <div class="split-left">
+      <div class="image-wrapper">
+        <img src="../Assets/breads.png" alt="Floating Image" class="floating-img">
+        <img src="../Assets/point-vector.png" alt="Main Image" class="main-img">
+      </div>
+    </div>
+
+    <div class="split-right">
+      <h1>about us</h1>
+      <p>Grandiose is a premier quality food & grocery retailer that delivers a memorable multisensory experience
+        and best in class service in a unique grocery shopping environment.</p>
+
+      <p>Our customers' needs are what runs the business, from the common, basic, fast moving items represented by
+        top brands within the region to providing a whole new exciting range of gourmet and diet specific
+        products from all over the world.</p>
+
+      <a href="https://www.grandiose.ae/about-us?srsltid=AfmBOoo3I1imGI1T1NGp43pECukdwJFxtzKSMnk4GbUmAcJWUOpotcBO">
+        <button class="action-btn">Read More</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Category Section -->
+  <section id="category">
+    <div class="container">
+
+      <div class="title-wrapper">
+        <h2 class="behind-title">shop by category</h2>
+        <h2 class="title">shop by category</h2>
+      </div>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-btn-left" id="prevBtn" style="display: none;">
+          &#8592;
+        </button>
+
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Group 1 -->
+          <div class="brown-background">
+            <div class="white-background">
+              <h3 class="Food-title">Cakes &amp; <br> Pastries</h3>
+              <img src="../Assets/cake.png" class="category-img">
+            </div>
+          </div>
+
+          <div class="brown-background">
+            <div class="white-background">
+              <h3 class="Food-title">Burgers &amp; <br>Sandwiches</h3>
+              <img src="../Assets/burger.png" class="category-img">
+            </div>
+          </div>
+          <!-- Group 2 -->
+          <div class="brown-background">
+            <div class="white-background">
+              <h3 class="Food-title">Meals &amp; <br> Pasta</h3>
+              <img src="../Assets/Pasta.png" class="category-img">
+            </div>
+          </div>
+
+          <div class="brown-background">
+            <div class="white-background">
+              <h3 class="Food-title">Pizza &amp; <br> More</h3>
+              <img src="../Assets/Pizza.png" class="category-img">
+            </div>
+          </div>
+          <!-- Group 3 -->
+          <div class="brown-background">
+            <div class="white-background">
+              <h3 class="Food-title">Arabic <br> Sweets</h3>
+              <img src="../Assets/Arabic Sweets.png" class="category-img">
+            </div>
+          </div>
+
+          <div class="brown-background">
+            <div class="white-background">
+              <h3 class="Food-title">Crossaints &amp; <br> Puffs</h3>
+              <img src="../Assets/Croissant.png" class="category-img">
+            </div>
+          </div>
+          <!-- Right Button -->
+          <button class="carousel-btn carousel-btn-right" id="nextBtn">
+            &#8594;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+  <section class="icons">
+    <div class="Features">
+      <div class="second-container">
+
+        <div class="items">
+          <div class="icon-img">
+            <img src="../Assets/Quality Food.png" alt="Quality Foods" />
+          </div>
+          <h3 class="feature-title">Quality Foods</h3>
+          <p class="feature-descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="items">
+          <div class="icon-img">
+            <img src="../Assets/Fastest Delivery.png" alt="Fastest Delivery" />
+          </div>
+          <h3 class="feature-title">Fastest Delivery</h3>
+          <p class="feature-descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="items">
+          <div class="icon-img">
+            <img src="../Assets/Good Service.png" alt="Good Service" />
+          </div>
+          <h3 class="feature-title">Good Service</h3>
+          <p class="feature-descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section">
+    <div class="product-container">
+      <div class="product-heading">
+        <h2 class="product-behind-title">PRODUCTS</h2>
+        <h2 class="product-title">products</h2>
+      </div>
+
+      <p class="product-descrip">Explore a wider selection of products and enjoy exclusive deals</p>
+
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-background">
+          <button class="heart-button">
+            <img src="../Assets/Heart.png" alt="">
+          </button>
+          <div class="product-top">
+            <div class="product-img">
+              <img src="../Assets/white bread.png" alt="White Bread">
+            </div>
+            <h3 class="product-name">White Bread</h3>
+            <p class="product-subtext">per piece</p>
+          </div>
+          <div class="products">
+            <p class="price">AED 7.80</p>
+            <button class="product-button">Add To Basket</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-background">
+          <button class="heart-button">
+            <img src="../Assets/Heart.png" alt="">
+          </button>
+          <div class="product-top">
+            <div class="product-img">
+              <img src="../Assets/brown & multigrain Bread.png" alt="Brown & Multigrain Bread">
+            </div>
+            <h3 class="product-name">Brown & Multigrain Bread</h3>
+            <p class="product-subtext">per piece</p>
+          </div>
+          <div class="products">
+            <p class="price">AED 7.80</p>
+            <button class="product-button">Add To Basket</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-background">
+          <button class="heart-button">
+            <img src="../Assets/Heart.png" alt="">
+          </button>
+          <div class="product-top">
+            <div class="product-img">
+              <img src="../Assets/baguettes.png" alt="Baguettes">
+            </div>
+            <h3 class="product-name">Baguettes</h3>
+            <p class="product-subtext">per piece</p>
+          </div>
+          <div class="products">
+            <p class="price">AED 7.80</p>
+            <button class="product-button">Add To Basket</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-background">
+          <button class="heart-button">
+            <img src="../Assets/Heart.png" alt="">
+          </button>
+          <div class="product-top">
+            <div class="product-img">
+              <img src="../Assets/product-crossaint.png" alt="Croissant">
+            </div>
+            <h3 class="product-name">Croissant</h3>
+            <p class="product-subtext">per piece</p>
+          </div>
+          <div class="products">
+            <p class="price">AED 7.80</p>
+            <button class="product-button">Add To Basket</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-background">
+          <button class="heart-button">
+            <img src="../Assets/Heart.png" alt="">
+          </button>
+          <div class="product-top">
+            <div class="product-img">
+              <img src="../Assets/Cookies.png" alt="Cookies">
+            </div>
+            <h3 class="product-name">Cookies</h3>
+            <p class="product-subtext">per piece</p>
+          </div>
+          <div class="products">
+            <p class="price">AED 7.80</p>
+            <button class="product-button">Add To Basket</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-background">
+          <button class="heart-button">
+            <img src="../Assets/Heart.png" alt="">
+          </button>
+          <div class="product-top">
+            <div class="product-img">
+              <img src="../Assets/Arabic Sweets.png" alt="Arabic Sweets">
+            </div>
+            <h3 class="product-name">Arabic Sweets</h3>
+            <p class="product-subtext">per piece</p>
+          </div>
+          <div class="products">
+            <p class="price">AED 7.80</p>
+            <button class="product-button">Add To Basket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="Contact">
+
+      <div class="footer-left">
+        <div class="primecontact-logo">
+          <img src="../Assets/primebakery-logo.png" alt="Grandiose Logo" class="rounded-full">
+        </div>
+        <p class="Follow-text">Follow Us On Social Media</p>
+        <div class="SocialMedia-Icons">
+          <a href="#" class="facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="linkedin" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="twitter" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <p class="Consume-text">We are what we consume.</p>
+        <p class="Shop-text">Shop responsibly.</p>
+        <div class="App">
+          <p class="App-text">DOWNLOAD OUR APP</p>
+          <div class="App-Icons">
+            <a href="#" class="App-store">
+              <img src="../Assets/App Store.png" alt="App Store">
+            </a>
+            <a href="#" class="Google-play">
+              <img src="../Assets/Google Play.png" alt="Google Play">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-middle-and-signup">
+        <div class="footer-columns">
+          <div>
+            <h3 class="Acount-text">My Account</h3>
+            <ul class="Account-list">
+              <li><a href="#" class="hover-white">Dashboard</a></li>
+              <li><a href="#" class="hover-white">Address Book</a></li>
+              <li><a href="#" class="hover-white">Orders</a></li>
+              <li><a href="#" class="hover-white">Track Orders</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="More-text">More</h3>
+            <ul class="More-list">
+              <li><a href="#" class="hover-white">About Us</a></li>
+              <li><a href="#" class="hover-white">Store Location</a></li>
+              <li><a href="#" class="hover-white">Products</a></li>
+              <li><a href="#" class="hover-white">Privacy Policies</a></li>
+              <li><a href="#" class="hover-white">Refund & Return</a></li>
+              <li><a href="#" class="hover-white">Terms & Conditions</a></li>
+              <li><a href="#" class="hover-white">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="HelpSupport-text">Help & Support</h3>
+            <ul class="HelpSupport-list">
+              <li><a href="#" class="hover-white">support@grandiose.ae</a></li>
+              <li><a href="#" class="hover-white">800-77-444</a></li>
+              <li><a href="#" class="hover-white">Contact Us</a></li>
+              <li><a href="#" class="hover-white">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="Sign-up">
+          <h3 class="SignUp-Title">Sign up to our newsletter now</h3>
+          <div class="SignUp-Input">
+            <input type="email" placeholder="Enter your email" class="Input-name" />
+            <button class="SignUp-Button">SIGN UP NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="basketNotification" class="basket-notification">
+    <p id="basketNotificationMessage"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
