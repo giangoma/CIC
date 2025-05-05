@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -14,22 +17,78 @@
                     <input type="text" placeholder="Search">
                 </div>
                 <div class="logo">
-                    <img src="../Assets/Logo.png" alt="Logo">
+                    <img src="../Assets/primebakery-logo.png" alt="Logo">
                 </div>
                 <div class="icons">
-                    <img src="../Assets/User.png" alt="User" class="icons_icons">
-                    <img src="../Assets/Basket.png" alt="Basket" class="icons_icons">
+                    <a href="#"><img src="../Assets/User.png" alt="User" class="icons_icons"></a>
+                    <a href="#"><img src="../Assets/Basket.png" alt="Basket" class="icons_icons"></a>>
                 </div>
             </div>
             <div class="navbar-bot">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
         </nav>
+
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="../Assets/donuts-banner.png" alt="Slide 1">
+                    <button class="purchase-btn">Purchase</button>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../Assets/croissant-banner.png" alt="Slide 2">
+                    <button class="purchase-btn">Purchase</button>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../Assets/cookies-banner.png" alt="Slide 3">
+                    <button class="purchase-btn">Purchase</button>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../Assets/cheeseburger-banner.png" alt="Slide 4">
+                    <button class="purchase-btn">Purchase</button>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
     </header>
+
+    <section class="about-primebakery">
+        <div class="split-left">
+            <div class="image-wrapper">
+                <img src="../Assets/breads.png" alt="Floating Image" class="floating-img">
+                <img src="../Assets/point-vector.png" alt="Main Image" class="main-img">
+            </div>
+        </div>
+
+        <div class="split-right">
+            <h1>about us</h1>
+            <p>Grandiose is a premier quality food & grocery retailer that delivers a memorable multisensory experience
+                and best in class service in a unique grocery shopping environment.</p>
+
+            <p>Our customers' needs are what runs the business, from the common, basic, fast moving items represented by
+                top brands within the region to providing a whole new exciting range of gourmet and diet specific
+                products from all over the world.</p>
+
+            <button class="action-btn">Learn More</button>
+        </div>
+    </section>
+
+    <div class="shop-category-header">
+        <div class="text-background">SHOP BY CATEGORY</div>
+        <div class="text-foreground">shop by category</div>
+      </div>
+      
+
 </body>
+
 </html>
