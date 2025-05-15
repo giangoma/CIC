@@ -614,9 +614,9 @@ body {
 .floating-img {
   position: absolute;
   top: 20px;
-  left: 40%;
+  left: 30%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 60%;
   pointer-events: none;
   transition: transform 0.1s ease-out;
   z-index: 2;
@@ -800,6 +800,10 @@ body {
   gap: 3rem;
   background-color: #3C552D;
   padding: 2rem;
+}
+
+.second-container{
+  width: 100vw;
 }
 
 .items {

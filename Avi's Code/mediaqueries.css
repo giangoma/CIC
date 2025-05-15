@@ -1,0 +1,33 @@
+/*Tablet Landscape*/
+@media (max-width: 1024px) {
+    .floating-img{
+        width: 100%;
+        right: 40%;
+        margin-left: 20%;
+    }
+
+    .Food-title{
+        font-size: 3rem;
+    }
+}
+
+/*Tablet (Portrait)*/
+@media (max-width: 768px) {
+    .title{
+        font-size: 3.5rem;
+    }
+
+    .footer-middle-and-signup{
+        width: 60%;
+    }
+
+
+}
+
+
+/*Phome*/
+@media (max-width: 480px){
+
+}
+
+
