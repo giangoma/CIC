@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #FAF7F0;
   overflow-x: hidden;
@@ -442,6 +446,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 #basketNotification.show {
@@ -452,6 +457,7 @@ body {
 
 #basketNotificationMessage {
   margin: 0;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 #empty-basket {
@@ -657,8 +663,13 @@ body {
   color: white;
   border: none;
   border-radius: 50px;
-  font-family: "Inter", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  transition: transform 0.15s ease;
   cursor: pointer;
+}
+
+.action-btn:hover{
+    transform: scale(0.95);
 }
 
 #category .container {
@@ -1200,3 +1211,11 @@ body {
   color: black !important;
 }
 
+.mobile-app{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem; 
+  margin-bottom: 2rem; 
+  max-width: 100%;    
+}
