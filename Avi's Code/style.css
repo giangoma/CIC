@@ -531,7 +531,8 @@ body {
 }
 
 .carousel-slide {
-  min-width: 100vw;
+  width: 100vw;
+  flex-shrink: 0;
   position: relative;
 }
 
@@ -546,14 +547,19 @@ body {
 .purchase-btn {
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: 60px;
   background-color: #2B2C30;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-family: "Inter", sans-serif;
+  font-family: "Nunito Sans";
   cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.purchase-btn:hover{
+  transform: scale(0.95); 
 }
 
 .carousel-dots {
@@ -751,8 +757,7 @@ body {
 .carousel-track {
   display: flex;
   overflow: hidden;
-  width: 100%;
-  gap: 2rem;
+  width: calc(100vw * 4);
   scroll-behavior: smooth;
 }
 
@@ -1002,6 +1007,7 @@ body {
   text-align: center;
   margin: 0 auto;
   transition: background-color 0.3s ease;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .product-button:hover {
@@ -1185,3 +1191,12 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.login-content, .basket-content {
+  font-family: "Nunito Sans";
+}
+
+.your-basket{
+  color: black !important;
+}
+
