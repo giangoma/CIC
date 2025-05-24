@@ -73,28 +73,81 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navbar Search Functionality
     const searchInput = document.querySelector('.navbar-top .search-bar input[type="text"]');
-    const categorySection = document.getElementById('category');
-    const categoryItems = categorySection.querySelectorAll('.Food-title');
     const navbar = document.querySelector('.navbar');
 
+    // Sections
+    const categorySection = document.getElementById('category');
+    const categoryItems = categorySection ? categorySection.querySelectorAll('.Food-title') : [];
+
+    const aboutSection = document.getElementById('about-primebakery');
+    const aboutItems = aboutSection ? aboutSection.querySelectorAll('h1') : [];
+
+    const iconSection = document.querySelector('.icons');
+    const iconItems = iconSection ? iconSection.querySelectorAll('.feature-title, .feature-descrip') : [];
+
+    const productSection = document.querySelector('.product-section');
+    const productItems = productSection ? productSection.querySelectorAll('.product-name') : [];
+
+    // Utility: remove existing suggestions (you can define your own logic here)
+    function removeSuggestions() {
+        const oldList = document.querySelector('.search-suggestions');
+        if (oldList) oldList.remove();
+    }
+
+    // Utility: show new suggestions
+    function displaySuggestions(suggestions) {
+        const list = document.createElement('ul');
+        list.className = 'search-suggestions';
+        list.style.position = 'absolute';
+        list.style.top = '100%';
+        list.style.left = '0';
+        list.style.backgroundColor = 'white';
+        list.style.border = '1px solid #ccc';
+        list.style.zIndex = '1000';
+        list.style.width = '100%';
+        list.style.listStyle = 'none';
+        list.style.padding = '0';
+        list.style.margin = '0';
+
+        suggestions.forEach(({ text }) => {
+            const item = document.createElement('li');
+            item.textContent = text;
+            item.style.padding = '8px';
+            item.style.cursor = 'pointer';
+            list.appendChild(item);
+        });
+
+        searchInput.parentElement.appendChild(list);
+    }
+
+    // Main search logic
     searchInput.addEventListener('input', function () {
         const searchTerm = this.value.toLowerCase();
         removeSuggestions();
 
         if (searchTerm.length > 0) {
             const suggestions = [];
-            categoryItems.forEach(item => {
-                const categoryText = item.textContent.toLowerCase();
-                if (categoryText.includes(searchTerm)) {
-                    suggestions.push({ text: item.textContent, element: item });
-                }
-            });
+
+            const gatherSuggestions = (elements) => {
+                elements.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        suggestions.push({ text: item.textContent.trim(), element: item });
+                    }
+                });
+            };
+
+            gatherSuggestions(categoryItems);
+            gatherSuggestions(aboutItems);
+            gatherSuggestions(iconItems);
+            gatherSuggestions(productItems);
 
             if (suggestions.length > 0) {
                 displaySuggestions(suggestions);
             }
         }
     });
+
 
     function displaySuggestions(suggestions) {
         const suggestionBox = document.createElement('div');
@@ -166,6 +219,36 @@ document.addEventListener('DOMContentLoaded', function () {
             alert(`Signing in with email: ${email} (This is a frontend simulation)`);
             loginPopup.style.display = "none";
         });
+
+        // Facebook login redirection
+        const facebookLoginBtn = document.querySelector('.facebook-login');
+
+        if (facebookLoginBtn) {
+            facebookLoginBtn.addEventListener('click', function () {
+                // Open the real Facebook login page in a new tab
+                window.open('https://www.facebook.com/login.php', '_blank');
+                // Optional: close the popup if needed
+                loginPopup.style.display = "none";
+            });
+        }
+
+        // Instagram
+        const instagramLoginBtn = document.querySelector('.instagram-login');
+        if (instagramLoginBtn) {
+            instagramLoginBtn.addEventListener('click', function () {
+                window.open('https://www.instagram.com/accounts/login/', '_blank');
+                loginPopup.style.display = "none";
+            });
+        }
+
+        // Twitter 
+        const twitterLoginBtn = document.querySelector('.twitter-login');
+        if (twitterLoginBtn) {
+            twitterLoginBtn.addEventListener('click', function () {
+                window.open('https://twitter.com/i/flow/login', '_blank');
+                loginPopup.style.display = "none";
+            });
+        }
     }
 
     // Basket Popup and Favorites Functionality
@@ -204,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 basketItemsContainer.appendChild(basketItemDiv);
 
                 const removeButton = basketItemDiv.querySelector('.remove-button');
-                removeButton.addEventListener('click', function() {
+                removeButton.addEventListener('click', function () {
                     const itemIdToRemove = this.dataset.id;
                     basket = basket.filter(item => item.id !== itemIdToRemove);
                     updateBasketDisplay();
@@ -233,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 favoriteItemsContainer.appendChild(favoriteItemDiv);
 
                 const addToBasketFromFavButton = favoriteItemDiv.querySelector('.add-to-basket-from-fav');
-                addToBasketFromFavButton.addEventListener('click', function() {
+                addToBasketFromFavButton.addEventListener('click', function () {
                     const itemIdToAdd = this.dataset.id;
                     const itemToAdd = favorites.find(favItem => favItem.id === itemIdToAdd);
                     if (itemToAdd) {
@@ -300,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        checkoutButton.addEventListener('click', function() {
+        checkoutButton.addEventListener('click', function () {
             alert("Proceeding to Checkout (Not yet implemented)");
             console.log('Basket:', basket);
             // Implement checkout logic
@@ -311,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
     heartButtons.forEach(button => {
         const heartImg = button.querySelector('img');
 
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const productBackground = this.closest('.product-background');
             const productName = productBackground.querySelector('.product-name').textContent;
             const productPrice = productBackground.querySelector('.price').textContent;
@@ -340,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Event Listeners for "Add To Basket" buttons on product cards ---
     const productBasketButtons = document.querySelectorAll('.product-background .product-button');
     productBasketButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const productBackground = this.closest('.product-background');
             const productName = productBackground.querySelector('.product-name').textContent;
             const productPrice = productBackground.querySelector('.price').textContent;

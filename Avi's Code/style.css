@@ -47,13 +47,11 @@ body {
   background-color: white;
   border: 1px solid #ccc;
   border-top: none;
-  /* Remove top border to connect visually */
   border-radius: 0 0 5px 5px;
   /* Optional rounded bottom corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* Optional shadow for depth */
   z-index: 10;
-  /* Ensure it appears above other content */
   max-height: 200px;
   /* Limit the height and add scroll if needed */
   overflow-y: auto;
@@ -82,6 +80,18 @@ body {
   border-radius: 5px;
   outline: none;
   color: #9DBFAF;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 60%;
+  margin: 0 auto;
+  display: block;
 }
 
 .logo img {
@@ -172,7 +182,9 @@ body {
 
 
 .login-content {
-  background-color: #fefefe;
+  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.jpeg') no-repeat center center;
+  ;
+  background-size: cover;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -328,9 +340,12 @@ body {
 }
 
 .basket-popup {
-  display: none;/* Hidden by default */
-  position: fixed;/* Stay in place */
-  z-index: 12;/* Higher than login popup if needed */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 12;
+  /* Higher than login popup if needed */
   left: 0;
   top: 0;
   width: 100%;
@@ -343,7 +358,8 @@ body {
 }
 
 .basket-content {
-  background-color: #fefefe;
+  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.jpeg') no-repeat center center;
+  background-size: cover;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -438,11 +454,13 @@ body {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #4CAF50; /* Example green color */
+  background-color: #4CAF50;
+  /* Example green color */
   color: white;
   padding: 15px 30px;
   border-radius: 5px;
-  z-index: 1000; /* Ensure it's on top of everything */
+  z-index: 1000;
+  /* Ensure it's on top of everything */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
@@ -475,7 +493,8 @@ body {
 #favorites-section h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  color: #e63946; /* Example favorite section title color */
+  color: #e63946;
+  /* Example favorite section title color */
 }
 
 #favorite-items .favorite-item {
@@ -504,7 +523,8 @@ body {
 }
 
 #favorite-items .favorite-item .add-to-basket-from-fav {
-  background-color: #5cb85c; /* Example add to basket color */
+  background-color: #5cb85c;
+  /* Example add to basket color */
   color: white;
   padding: 8px 12px;
   border: none;
@@ -548,24 +568,6 @@ body {
   display: block;
   position: relative;
   z-index: -1;
-}
-
-.purchase-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 60px;
-  background-color: #2B2C30;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-family: "Nunito Sans";
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
-
-.purchase-btn:hover{
-  transform: scale(0.95); 
 }
 
 .carousel-dots {
@@ -626,8 +628,8 @@ body {
 .floating-img {
   position: absolute;
   top: 20px;
-  left: 30%;
-  transform: translateX(-50%);
+  left: 40%;
+  transform: translateX(-70%);
   width: 60%;
   pointer-events: none;
   transition: transform 0.1s ease-out;
@@ -668,8 +670,8 @@ body {
   cursor: pointer;
 }
 
-.action-btn:hover{
-    transform: scale(0.95);
+.action-btn:hover {
+  transform: scale(0.95);
 }
 
 #category .container {
@@ -707,7 +709,7 @@ body {
 /* Container grid setup */
 .grid {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   align-items: stretch;
 }
 
@@ -777,6 +779,7 @@ body {
   /* Previously 50% – now smaller width */
   max-width: 50%;
   /* Optional: ensure it doesn't stretch too far */
+  margin-right: 2rem;
 }
 
 /* Carousel buttons */
@@ -810,6 +813,7 @@ body {
   fill: #333;
 }
 
+/*Feature Section*/
 .icons .second-container {
   display: flex;
   justify-content: center;
@@ -818,7 +822,7 @@ body {
   padding: 2rem;
 }
 
-.second-container{
+.second-container {
   width: 100vw;
 }
 
@@ -850,10 +854,12 @@ body {
 }
 
 .feature-descrip {
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.6;
+  margin-top: 2px;
 }
 
+/* Product Section*/
 .product {
   padding: 5rem 1rem 3rem;
   text-align: center;
@@ -1203,19 +1209,20 @@ body {
   cursor: pointer;
 }
 
-.login-content, .basket-content {
+.login-content,
+.basket-content {
   font-family: "Nunito Sans";
 }
 
-.your-basket{
+.your-basket {
   color: black !important;
 }
 
-.mobile-app{
-    display: block;
+.mobile-app {
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5rem; 
-  margin-bottom: 2rem; 
-  max-width: 100%;    
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
 }
