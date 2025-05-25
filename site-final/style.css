@@ -1172,6 +1172,7 @@ body {
   display: none;
 }
 
+/*Additional Features*/
 /*Loader*/
 #loader {
   position: fixed;
@@ -1192,4 +1193,19 @@ body {
 
 @keyframes spin {
   100% { transform: rotate(360deg); }
+}
+
+/*Scrollbar Color*/
+::-webkit-scrollbar {
+  width: 10px;
+  background: #f0e9df; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B311B; 
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3C552D; 
 }
