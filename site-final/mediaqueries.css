@@ -102,7 +102,7 @@
         margin-left: 10%;
     }
 
-    .navbar-icons{
+    .navbar-icons {
         display: flex;
         gap: 20px;
     }
@@ -349,7 +349,7 @@
         margin-left: 10%;
     }
 
-    .navbar-icons{
+    .navbar-icons {
         position: relative;
         left: 20%;
         display: flex;
@@ -550,7 +550,15 @@
 
     .Contact {
         flex-direction: column;
+    }
+
+    .App,
+    .App-Icons {
         align-items: center;
+    }
+
+    .App-Icons{
+        display: block;
     }
 
     .footer-middle-and-signup {
@@ -588,6 +596,88 @@
         width: 100%;
         margin-top: 0.5rem;
     }
+
+    /* Styling for burger list */
+
+    .four {
+        font-family: "Nunito Sans";
+        align-items: left !important;
+        display: flex;
+    }
+
+    .burgerlist {
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    /* Styling for burger list items */
+
+
+    .burgerlist li {
+        list-style: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 5px;
+        border-radius: 10px;
+        background: #2B2C30;
+    }
+
+    /* Styling for burger list label */
+    .burgerlist li label {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Styling for label before */
+    label::before {
+        content: '+';
+        margin-right: 15px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    /* Hide the checkboxes */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    /* Styling for burger content */
+    .burgerlist .burgercontent {
+        color: white;
+        padding: 0 15px;
+        line-height: 30px;
+        font-size: 0.875rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s, padding 0.5s;
+        text-align: left;
+    }
+
+    .burgercontent p a {
+        color: white;
+    }
+
+    .burgercontent p a:hover {
+        color: gray;
+    }
+
+    /* Expand content when checkbox is checked */
+    .burgerlist input[type="checkbox"]:checked+label+.burgercontent {
+        max-height: 400px;
+        padding: 15px;
+    }
+
+    /* Change "+" to "-" when expanded */
+    .burgerlist input[type="checkbox"]:checked+label::before {
+        content: '-';
+    }
+
 }
 
 /*MEDIUM MOBILE (319px to 425px)*/
@@ -610,7 +700,7 @@
         margin-left: 10%;
     }
 
-    .navbar-icons{
+    .navbar-icons {
         position: relative;
         left: 20%;
         display: flex;
@@ -827,7 +917,10 @@
 
     .Contact {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .App-Icons{
+        display: block;
     }
 
     .footer-middle-and-signup {
@@ -865,6 +958,87 @@
         width: 100%;
         margin-top: 0.5rem;
     }
+
+     /* Styling for burger list */
+
+    .four {
+        font-family: "Nunito Sans";
+        align-items: left !important;
+        display: flex;
+    }
+
+    .burgerlist {
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    /* Styling for burger list items */
+
+
+    .burgerlist li {
+        list-style: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 5px;
+        border-radius: 10px;
+        background: #2B2C30;
+    }
+
+    /* Styling for burger list label */
+    .burgerlist li label {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Styling for label before */
+    label::before {
+        content: '+';
+        margin-right: 15px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    /* Hide the checkboxes */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    /* Styling for burger content */
+    .burgerlist .burgercontent {
+        color: white;
+        padding: 0 15px;
+        line-height: 30px;
+        font-size: 0.875rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s, padding 0.5s;
+        text-align: left;
+    }
+
+    .burgercontent p a {
+        color: white;
+    }
+
+    .burgercontent p a:hover {
+        color: gray;
+    }
+
+    /* Expand content when checkbox is checked */
+    .burgerlist input[type="checkbox"]:checked+label+.burgercontent {
+        max-height: 400px;
+        padding: 15px;
+    }
+
+    /* Change "+" to "-" when expanded */
+    .burgerlist input[type="checkbox"]:checked+label::before {
+        content: '-';
+    }
 }
 
 /*SMALL MOBILE (320px)*/
@@ -887,7 +1061,7 @@
         margin-left: 10%;
     }
 
-    .navbar-icons{
+    .navbar-icons {
         position: relative;
         left: 20%;
         display: flex;
@@ -1101,7 +1275,6 @@
 
     .Contact {
         flex-direction: column;
-        align-items: center;
     }
 
     .footer-left {
@@ -1123,5 +1296,86 @@
 
     .SignUp-Input {
         display: none;
+    }
+
+        /* Styling for burger list */
+
+    .four {
+        font-family: "Nunito Sans";
+        align-items: left !important;
+        display: flex;
+    }
+
+    .burgerlist {
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    /* Styling for burger list items */
+
+
+    .burgerlist li {
+        list-style: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 5px;
+        border-radius: 10px;
+        background: #2B2C30;
+    }
+
+    /* Styling for burger list label */
+    .burgerlist li label {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Styling for label before */
+    label::before {
+        content: '+';
+        margin-right: 15px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    /* Hide the checkboxes */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    /* Styling for burger content */
+    .burgerlist .burgercontent {
+        color: white;
+        padding: 0 15px;
+        line-height: 30px;
+        font-size: 0.875rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s, padding 0.5s;
+        text-align: left;
+    }
+
+    .burgercontent p a {
+        color: white;
+    }
+
+    .burgercontent p a:hover {
+        color: gray;
+    }
+
+    /* Expand content when checkbox is checked */
+    .burgerlist input[type="checkbox"]:checked+label+.burgercontent {
+        max-height: 400px;
+        padding: 15px;
+    }
+
+    /* Change "+" to "-" when expanded */
+    .burgerlist input[type="checkbox"]:checked+label::before {
+        content: '-';
     }
 }

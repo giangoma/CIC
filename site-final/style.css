@@ -1169,3 +1169,7 @@ body {
   margin-bottom: 2rem;
   max-width: 100%;
 }
+
+.four{
+  display: none;
+}
