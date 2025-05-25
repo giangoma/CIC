@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Login Popup Functionality
-    const userIcon = document.querySelector('.icons a[href="#"] img[alt="User"]');
+    const userIcon = document.querySelector('.navbar-icons img[alt="User"]');
     const loginPopup = document.getElementById('loginPopup');
     const closeButton = loginPopup.querySelector('.close-button');
     const loginForm = document.getElementById('loginForm');
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Basket Popup and Favorites Functionality
-    const basketIcon = document.querySelector('.icons a[href="#"] img[alt="Basket"]');
+    const basketIcon = document.querySelector('.navbar-icons img[alt="Basket"]');
     const basketPopup = document.getElementById('basketPopup');
     const closeBasketButton = basketPopup.querySelector('.close-button');
     const basketItemsContainer = document.getElementById('basket-items');
