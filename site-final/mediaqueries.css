@@ -5,9 +5,30 @@
         flex-direction: row;
     }
 
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 60%;
+        margin: 0 auto;
+        display: block;
+    }
+
     .logo img {
         max-width: 60%;
         margin-left: 10%;
+    }
+
+    .navbar-icons {
+        display: flex;
+        gap: 20px;
+    }
+
+    .icons_icons {
+        width: 25px;
     }
 
     .navbar-bot ul {
@@ -64,16 +85,30 @@
         gap: 10px;
     }
 
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .logo img {
         max-width: 60%;
         margin: 0 auto;
-        justify-content: center;
-        text-align: center;
+        display: block;
     }
 
-    .icons {
-        justify-content: center;
-        gap: 15px;
+    .logo img {
+        max-width: 60%;
+        margin-left: 10%;
+    }
+
+    .navbar-icons{
+        display: flex;
+        gap: 20px;
+    }
+
+    .icons_icons {
+        width: 25px;
     }
 
     .navbar-bot ul {
@@ -101,17 +136,19 @@
         gap: 10px;
     }
 
-    #carousel {
+    #hero-video {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
         margin-top: -5%;
     }
 
-    .carousel-slide {
-        width: 100vw;
-    }
-
-    .dot {
-        height: 10px;
-        width: 10px;
+    #hero-video video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        z-index: -1;
     }
 
     #about-primebakery {
@@ -128,29 +165,31 @@
     }
 
     .split-left img.main-img {
-        max-width: 75%;
-        margin-left: 20px;
-    }
-
-    .floating-img {
-        width: 80%;
-        top: 10px;
-        left: 60%;
+        max-width: 100%;
+        margin-right: 15px;
     }
 
     .split-right {
         align-items: flex-start;
         text-align: left;
-        margin-right: 15px;
+        margin-right: 10px;
     }
 
     .split-right h1 {
-        font-size: 40px;
+        font-size: 30px;
+        margin-left: 20px;
     }
 
     .split-right p {
         font-size: 14px;
         text-align: justify;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .action-btn {
+        margin-left: 20px;
+
     }
 
     .grid {
@@ -167,11 +206,11 @@
     .carousel-track .brown-background {
         flex: 0 0 45%;
         max-width: 48%;
-        margin-right: 1.8rem;
+        margin-right: 2.8rem;
     }
 
     .Food-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .category-img {
@@ -290,64 +329,85 @@
     }
 }
 
-/*MOBILE (320px to 767px)*/
-@media (max-width: 767px) and (min-width: 320px) {
+/*LARGE MOBILE (425px to 767px)*/
+@media (max-width: 767px) and (min-width: 425px) {
     header {
-        width: 100% !important;
+        width: 130% !important;
         max-width: 100vw;
         box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
     }
 
     .logo img {
-        max-width: 100%;
+        position: relative;
+        right: 40%;
+        max-width: 65%;
+        margin-left: 10%;
     }
 
-    #carousel {
+    .navbar-icons{
+        position: relative;
+        left: 20%;
+        display: flex;
+        gap: 20px;
+    }
+
+    .icons_icons {
+        width: 20px;
+    }
+
+    .navbar-bot ul li,
+    .navbar-bot ul li a {
+        font-size: 15px
+    }
+
+    .search-bar input {
         display: none;
     }
 
-    #carousel-replacement {
-        display: block !important;
+
+    #hero-video {
         width: 100%;
-        max-width: 100vw;
+        height: auto;
         overflow: hidden;
+        margin-top: -10%;
     }
 
-    .carousel-replacement-img {
+    #hero-video video {
         width: 100%;
-        max-width: 100vw;
-        height: 250px;
+        height: auto;
         object-fit: cover;
         display: block;
+        z-index: -1;
     }
 
     #about-primebakery {
         flex-direction: column !important;
         align-items: stretch;
-        gap: 24px;
-        padding: 24px 8px 0 8px;
+        gap: 15px;
+        padding: 18px 5px 0 5px;
         align-items: center;
+    }
+
+    .split-left img.main-img {
+        width: 100%;
+        max-width: 500px;
+        object-fit: cover;
+        justify-content: center;
     }
 
     .split-left,
     .split-right {
-        max-width: 100%;
-        flex: 1 1 100%;
-    }
-
-    .split-right{
-        margin: 10%;
+        max-width: 90%;
+        flex: 1 1 90%;
     }
 
     .main-img {
-        max-width: 300px !important;
-    }
-
-    .floating-img {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110%;
-        margin-bottom: 1rem;
+        max-width: 400px !important;
     }
 
     .split-right h1,
@@ -361,60 +421,707 @@
         display: block;
     }
 
-    .carousel-track {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%;
-    }
-
     .carousel-track .brown-background {
         flex: 0 0 100%;
+        /* Make each item take full width */
         max-width: 100%;
-        margin-right: 0;
+        margin-right: 2rem;
+        /* Keep the gap if desired */
+        height: 400px;
+        /* Adjusted from 500px to a more compact height */
+    }
+
+    /* Optional: reduce padding for smaller screens */
+    .carousel-wrapper {
+        padding: 0 20px;
+    }
+
+    .behind-title {
+        font-size: 3rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
     }
 
     .Food-title {
-        font-size: 2rem;
-        text-align: center;
+        font-size: 2.5rem;
+        /* Scale down title */
+    }
+
+    .category-img {
+        height: 200px;
+        /* Adjust image height for mobile */
+    }
+
+    .carousel-btn-left {
+        left: -5px;
+    }
+
+    .carousel-btn-right {
+        right: -5px;
+    }
+
+    .icons .second-container {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem 1rem;
+    }
+
+    .icon-img img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-title {
+        font-size: 0.75rem;
     }
 
     .feature-descrip {
-        margin-top: 5px;
-        font-size: 0.75rem;
-        text-align: center;
+        font-size: 0.50rem;
+        line-height: 1.5;
+    }
+
+    .product-behind-title {
+        font-size: 2.80rem;
+    }
+
+    .product-title {
+        font-size: 1.80rem;
     }
 
     .product-descrip {
-        font-size: 0.95rem;
+        font-size: 0.90rem;
         text-align: center;
     }
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        margin: 0 0.5rem;
+        margin: 0 1rem;
     }
 
-    .product-name{
+    .product-img {
+        margin-top: 10px;
+        height: 100px;
+    }
+
+    .product-background {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .product-top,
+    .product-name,
+    .products,
+    .product-subtext,
+    .price,
+    .product-button {
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .product-background .product-descrip {
+        display: none;
+    }
+
+    .products {
+        align-items: flex-start;
+    }
+
+    .product-button {
+        margin-left: 0;
+        margin-right: auto;
+        padding: 15px 20px;
+        font-size: 1rem;
         text-align: center;
     }
 
-    .footer-left {
-        display: flex;
+    .heart-button img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #footer {
+        text-align: center;
+    }
+
+    .Contact {
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
-    .primecontact-logo img,
-    .App-Icons {
+    .footer-middle-and-signup {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .footer-columns {
+        display: none;
+    }
+
+    .SocialMedia-Icons {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .SignUp-Title {
+        text-align: center;
+        font-size: 1.50rem;
+    }
+
+    .SignUp-Input {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .Input-name {
+        width: 100%;
+    }
+
+    .SignUp-Button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+/*MEDIUM MOBILE (319px to 425px)*/
+@media (max-width: 424px) and (min-width: 319px) {
+    header {
+        width: 130% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .logo img {
+        position: relative;
+        right: 40%;
+        max-width: 65%;
+        margin-left: 10%;
+    }
+
+    .navbar-icons{
+        position: relative;
+        left: 20%;
+        display: flex;
+        gap: 20px;
+    }
+
+    .icons_icons {
+        width: 20px;
+    }
+
+    .navbar-bot ul li,
+    .navbar-bot ul li a {
+        font-size: 15px
+    }
+
+    .search-bar input {
+        display: none;
+    }
+
+    #hero-video {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-top: -10%;
+    }
+
+    #hero-video video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        z-index: -1;
+    }
+
+    #about-primebakery {
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 15px;
+        padding: 18px 5px 0 5px;
+        align-items: center;
+    }
+
+    .split-right h1 {
+        font-family: "Playfair", serif;
+        font-size: 40px;
+        color: #4b2e1e;
+    }
+
+    .split-right p {
+        font-size: 15px;
+        text-align: justify;
+        color: #444;
+    }
+
+    .split-left img.main-img {
+        width: 100%;
+        max-width: 500px;
+        object-fit: cover;
+        justify-content: center;
+    }
+
+    .split-left,
+    .split-right {
+        max-width: 90%;
+        flex: 1 1 90%;
+    }
+
+    .main-img {
+        max-width: 400px !important;
+    }
+
+    .split-right h1,
+    p {
+        align-self: center;
+    }
+
+    .action-btn {
         margin-left: auto;
         margin-right: auto;
         display: block;
     }
+
+    .carousel-track .brown-background {
+        flex: 0 0 100%;
+        /* Make each item take full width */
+        max-width: 100%;
+        margin-right: 2rem;
+        /* Keep the gap if desired */
+        height: 400px;
+        /* Adjusted from 500px to a more compact height */
+    }
+
+    /* Optional: reduce padding for smaller screens */
+    .carousel-wrapper {
+        padding: 0 20px;
+    }
+
+    .behind-title {
+        font-size: 3rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .Food-title {
+        font-size: 2.5rem;
+        /* Scale down title */
+    }
+
+    .category-img {
+        height: 200px;
+        /* Adjust image height for mobile */
+    }
+
+    .carousel-btn-left {
+        left: -5px;
+    }
+
+    .carousel-btn-right {
+        right: -5px;
+    }
+
+    .icons .second-container {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem 1rem;
+    }
+
+    .icon-img img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-title {
+        font-size: 0.75rem;
+    }
+
+    .feature-descrip {
+        font-size: 0.50rem;
+        line-height: 1.5;
+    }
+
+    .product-behind-title {
+        font-size: 2.80rem;
+    }
+
+    .product-title {
+        font-size: 1.80rem;
+    }
+
+    .product-descrip {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+        gap: 1.5rem;
+    }
+
+    .product-img {
+        height: 160px;
+        margin-bottom: 1rem;
+    }
+
+    .product-img img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .product-descrip {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .product-top,
+    .product-name,
+    .products,
+    .product-subtext,
+    .price,
+    .product-button {
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .products {
+        align-items: flex-start;
+    }
+
+    .product-button {
+        margin-left: 0;
+        margin-right: auto;
+        padding: 12px 20px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .heart-button img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #footer {
+        text-align: center;
+    }
+
+    .Contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-middle-and-signup {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .footer-columns {
+        display: none;
+    }
+
     .SocialMedia-Icons {
+        text-align: center;
         justify-content: center;
     }
 
+    .SignUp-Title {
+        text-align: center;
+        font-size: 1.30rem;
+    }
 
+    .SignUp-Input {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .Input-name {
+        width: 100%;
+    }
+
+    .SignUp-Button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+/*SMALL MOBILE (320px)*/
+@media (max-width: 320px) {
+    header {
+        width: 130% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .logo img {
+        position: relative;
+        right: 55%;
+        max-width: 100%;
+        margin-left: 10%;
+    }
+
+    .navbar-icons{
+        position: relative;
+        left: 20%;
+        display: flex;
+        gap: 20px;
+    }
+
+    .icons_icons {
+        width: 20px;
+    }
+
+    .navbar-bot ul li,
+    .navbar-bot ul li a {
+        font-size: 12px
+    }
+
+    .search-bar input {
+        display: none;
+    }
+
+    #hero-video {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-top: -12%;
+    }
+
+    #hero-video video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        z-index: -1;
+    }
+
+    #about-primebakery {
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 15px;
+        padding: 18px 5px 0 5px;
+        align-items: center;
+    }
+
+    .split-right h1 {
+        font-family: "Playfair", serif;
+        font-size: 25px;
+        color: #4b2e1e;
+    }
+
+    .split-right p {
+        font-size: 15px;
+        margin: 10px;
+        text-align: justify;
+        color: #444;
+    }
+
+    .split-left img.main-img {
+        width: 100%;
+        max-width: 500px;
+        object-fit: cover;
+        justify-content: center;
+    }
+
+    .split-left,
+    .split-right {
+        max-width: 90%;
+        flex: 1 1 90%;
+    }
+
+    .main-img {
+        max-width: 400px !important;
+    }
+
+    .action-btn {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .carousel-track .brown-background {
+        flex: 0 0 100%;
+        /* Make each item take full width */
+        max-width: 100%;
+        margin-right: 2rem;
+        /* Keep the gap if desired */
+        height: 300px;
+        /* Adjusted from 500px to a more compact height */
+    }
+
+    /* Optional: reduce padding for smaller screens */
+    .carousel-wrapper {
+        padding: 0 10px;
+    }
+
+    .behind-title {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .Food-title {
+        font-size: 1.5rem;
+        /* Scale down title */
+    }
+
+    .category-img {
+        height: 100px;
+        /* Adjust image height for mobile */
+    }
+
+    .carousel-btn-left {
+        left: -5px;
+    }
+
+    .carousel-btn-right {
+        right: -5px;
+    }
+
+    .icons .second-container {
+        flex-direction: row;
+        gap: 2rem;
+        padding: 0.75rem 0.75rem;
+    }
+
+    .icon-img img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .feature-title {
+        font-size: 0.65rem;
+    }
+
+    .feature-descrip {
+        font-size: 0.35rem;
+        line-height: 1.5;
+    }
+
+    .product-behind-title {
+        font-size: 2.80rem;
+    }
+
+    .product-title {
+        font-size: 1.80rem;
+    }
+
+    .product-descrip {
+        font-size: 0.75rem;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+        gap: 1.5rem;
+    }
+
+    .product-img {
+        height: 160px;
+        margin-bottom: 1rem;
+    }
+
+    .product-img img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .product-descrip {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .product-top,
+    .product-name,
+    .products,
+    .product-subtext,
+    .price,
+    .product-button {
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .products {
+        align-items: flex-start;
+    }
+
+    .product-button {
+        margin-left: 0;
+        margin-right: auto;
+        padding: 12px 20px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .heart-button img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #footer {
+        text-align: center;
+    }
+
+    .Contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        margin-right: 50px;
+    }
+
+    .footer-columns {
+        display: none;
+    }
+
+    .SocialMedia-Icons {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .SignUp-Title {
+        display: none;
+    }
+
+    .SignUp-Input {
+        display: none;
+    }
 }

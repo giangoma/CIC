@@ -22,20 +22,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Carousel Buttons
     const carouselTrack = document.getElementById('carouselTrack');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
 
     let currentGroup = 0;
-    const groupSize = 2;
+
+    function getGroupSize() {
+        const width = window.innerWidth;
+        if (width < 768) return 1; // Mobile (1 item)
+        return 2; // Tablet and up (2 items)
+    }
 
     function getItemWidth() {
-        const gap = 32; // Assuming 2rem = 32px
+        const gap = 32; // 2rem gap
         return carouselTrack.children[0].offsetWidth + gap;
     }
 
     function scrollToGroup(index) {
+        const groupSize = getGroupSize();
         const scrollPosition = index * getItemWidth() * groupSize;
         carouselTrack.scrollTo({
             left: scrollPosition,
@@ -44,15 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateButtons() {
+        const groupSize = getGroupSize();
         const totalItems = carouselTrack.children.length;
-        const maxGroupIndex = Math.floor(totalItems / groupSize) - 1;
+        const maxGroupIndex = Math.ceil(totalItems / groupSize) - 1;
 
         prevBtn.style.display = currentGroup === 0 ? 'none' : 'block';
         nextBtn.style.display = currentGroup >= maxGroupIndex ? 'none' : 'block';
     }
 
     nextBtn.addEventListener('click', () => {
-        const maxGroupIndex = Math.floor(carouselTrack.children.length / groupSize) - 1;
+        const groupSize = getGroupSize();
+        const maxGroupIndex = Math.ceil(carouselTrack.children.length / groupSize) - 1;
+
         if (currentGroup < maxGroupIndex) {
             currentGroup++;
             scrollToGroup(currentGroup);
@@ -68,8 +76,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    window.addEventListener('load', updateButtons);
-    window.addEventListener('resize', updateButtons);
+    window.addEventListener('load', () => {
+        currentGroup = 0;
+        scrollToGroup(currentGroup);
+        updateButtons();
+    });
+
+    window.addEventListener('resize', () => {
+        currentGroup = 0;
+        scrollToGroup(currentGroup);
+        updateButtons();
+    });
+
 
     // Navbar Search Functionality
     const searchInput = document.querySelector('.navbar-top .search-bar input[type="text"]');

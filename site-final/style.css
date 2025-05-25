@@ -82,32 +82,6 @@ body {
   color: #9DBFAF;
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo img {
-  max-width: 60%;
-  margin: 0 auto;
-  display: block;
-}
-
-.logo img {
-  max-width: 60%;
-  margin-left: 10%;
-}
-
-.icons {
-  display: flex;
-  gap: 20px;
-}
-
-.icons_icons {
-  width: 25px;
-}
-
 .navbar-bot {
   background-color: #FAF7F0;
   padding: 30px;
@@ -118,7 +92,6 @@ body {
   bottom: 20px;
   z-index: 1;
 }
-
 
 .navbar-bot ul {
   display: flex;
@@ -182,8 +155,7 @@ body {
 
 
 .login-content {
-  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.jpeg') no-repeat center center;
-  ;
+  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.png') no-repeat center center;
   background-size: cover;
   padding: 20px;
   border: 1px solid #888;
@@ -358,7 +330,7 @@ body {
 }
 
 .basket-content {
-  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.jpeg') no-repeat center center;
+  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.png') no-repeat center center;
   background-size: cover;
   margin: 15% auto;
   padding: 20px;
@@ -543,61 +515,26 @@ body {
   padding: 10px;
 }
 
-#carousel {
+#hero-video {
   width: 100%;
-  position: relative;
+  height: auto;
   overflow: hidden;
   margin-top: -3%;
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 400%;
-}
-
-.carousel-slide {
-  width: 100vw;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.carousel-slide img {
+#hero-video video {
   width: 100%;
   height: auto;
+  object-fit: cover;
   display: block;
-  position: relative;
   z-index: -1;
-}
-
-.carousel-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #2B2C30;
 }
 
 #about-primebakery {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 100px 0 100px;
+  padding: 60px 100px 0 80px;
   /* top, right, bottom, left */
   margin-top: 50px;
   gap: 50px;
@@ -619,21 +556,9 @@ body {
 
 .split-left img.main-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   height: auto;
-  border-radius: 10px;
   object-fit: cover;
-}
-
-.floating-img {
-  position: absolute;
-  top: 20px;
-  left: 40%;
-  transform: translateX(-50%);
-  width: 85%;
-  pointer-events: none;
-  transition: transform 0.1s ease-out;
-  z-index: 2;
 }
 
 .split-right {
@@ -1030,6 +955,24 @@ body {
 .product-button:hover {
   background-color: #3a9440;
 }
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto; /* Optional: scrolls on small screens */
+}
+
+.map-container iframe {
+  max-width: 100%;
+  height: 500px;
+  border: none;
+}
+
 
 #footer {
   background-color: #2B2C30;
