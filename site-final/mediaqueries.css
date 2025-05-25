@@ -1379,3 +1379,11 @@
         content: '-';
     }
 }
+
+
+@media (min-width: 768px) {
+    .Contact {
+        flex-direction: row !important;
+        align-items: flex-start;
+    }
+}

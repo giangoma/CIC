@@ -987,9 +987,7 @@ body {
 .Contact {
   display: flex;
   justify-content: flex-start;
-  /* Align items to the start to reduce trailing space */
   gap: 1rem;
-  /* Adjust as needed */
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
