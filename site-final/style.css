@@ -1171,3 +1171,25 @@ body {
 .four{
   display: none;
 }
+
+/*Loader*/
+#loader {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: white; /* or any color you want */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s;
+}
+
+.loader-logo {
+  width: 120px;
+  height: 120px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
