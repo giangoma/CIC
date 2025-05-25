@@ -79,7 +79,7 @@ body {
   height: 30px;
   border-radius: 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #0000;
 }
 
 .navbar-bot {
@@ -155,7 +155,7 @@ body {
 
 
 .login-content {
-  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.png') no-repeat center center;
+  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.jpeg') no-repeat center center;
   background-size: cover;
   padding: 20px;
   border: 1px solid #888;
@@ -330,7 +330,7 @@ body {
 }
 
 .basket-content {
-  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.png') no-repeat center center;
+  background: rgba(0, 0, 0, 0.4) url('../Assets/loginbackground.jpeg') no-repeat center center;
   background-size: cover;
   margin: 15% auto;
   padding: 20px;
