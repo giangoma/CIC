@@ -556,7 +556,7 @@ body {
 
 .split-left img.main-img {
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   height: auto;
   object-fit: cover;
 }
