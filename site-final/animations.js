@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  // ABOUT SECTION ANIMATION
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#about-primebakery",
@@ -26,13 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
       x: 50,
       opacity: 0,
       stagger: 0.2
-    }, 0.6)
+    }, 0.6);
 
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
+  // ICONS SECTION ANIMATION
   gsap.from(".icons .items", {
     scrollTrigger: {
       trigger: ".icons",
@@ -45,17 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.3,
     ease: "power2.out"
   });
-});
 
-gsap.from(".product-background", {
-  scrollTrigger: {
-    trigger: ".product-grid", 
-    start: "top 80%",          
-    toggleActions: "play none none none",
-  },
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.2,
-  ease: "power2.out"
+  // PRODUCT SECTION ANIMATION
+  gsap.from(".product-background", {
+    scrollTrigger: {
+      trigger: ".product-grid",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
 });
